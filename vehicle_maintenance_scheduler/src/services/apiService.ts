@@ -26,18 +26,20 @@ export interface VehiclesResponse {
   vehicles: Vehicle[];
 }
 
+const CREDENTIALS = {
+  clientID: '545d1313-e08e-4430-8a6a-9dfc082a2fc6',
+  clientSecret: 'QazEdxfkezUzVRJF'
+};
+
 let accessToken: string | null = null;
 
 async function getAccessToken(): Promise<string> {
   if (accessToken) return accessToken;
   
   try {
-    const response = await axios.post(`${EVALUATION_SERVICE_URL}/register`);
-    const { clientID, clientSecret } = response.data;
-    
     const authResponse = await axios.post(`${EVALUATION_SERVICE_URL}/auth`, {
-      clientID,
-      clientSecret
+      clientID: CREDENTIALS.clientID,
+      clientSecret: CREDENTIALS.clientSecret
     });
     
     accessToken = authResponse.data.access_token;

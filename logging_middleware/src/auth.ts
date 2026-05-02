@@ -14,7 +14,10 @@ export interface AuthResponse {
 }
 
 let cachedToken: string | null = null;
-let credentials: AuthCredentials | null = null;
+let credentials: AuthCredentials | null = {
+  clientID: '545d1313-e08e-4430-8a6a-9dfc082a2fc6',
+  clientSecret: 'QazEdxfkezUzVRJF'
+};
 
 export async function register(): Promise<AuthCredentials> {
   try {
