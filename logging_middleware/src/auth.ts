@@ -41,6 +41,10 @@ export async function authenticate(): Promise<string> {
     const response = await axios.post<AuthResponse>(
       `${EVALUATION_SERVICE_URL}/auth`,
       {
+        email: 'jogith_manchikanti@srmap.edu.in',
+        name: 'manchikanti jogith',
+        rollNo: 'ap23110010870',
+        accessCode: 'QkbpxH',
         clientID: credentials.clientID,
         clientSecret: credentials.clientSecret
       }

@@ -1,0 +1,69 @@
+{
+	"info": {
+		"_postman_id": "4e18375e-8559-42b7-a37a-42c16198f7e6",
+		"name": "Vehicle Maintenance Scheduler API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Health Check",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3001/health",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"health"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get All Depots Schedule",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3001/api/schedule",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"api",
+						"schedule"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Specific Depot Schedule (Depot 1)",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3001/api/schedule/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"api",
+						"schedule",
+						"1"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

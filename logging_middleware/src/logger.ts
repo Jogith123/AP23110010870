@@ -74,8 +74,11 @@ export async function Log(stack: Stack, level: Level, pkg: Package, message: str
     return response.data;
   } catch (error) {
     if (axios.isAxiosError(error)) {
-      throw new Error(`Logging failed: ${error.response?.data?.message || error.message}`);
+      console.warn(`[Logger] Logging failed: ${error.response?.data?.message || error.message}`);
+    } else {
+      console.warn(`[Logger] Logging failed: ${String(error)}`);
     }
-    throw new Error(`Logging failed: ${String(error)}`);
+    // Return a dummy response so callers don't crash
+    return { logID: 'local', message: 'log skipped - service unavailable' };
   }
 }
